@@ -1,0 +1,14 @@
+<div class="media mt-3">
+    <a class="mr-3" href="#">
+      <img src="{{comment.image}}" class="mr-3" alt="...">
+    </a>
+    <div class="media-body">
+      <h5 class="mt-0">{{comment.name}}</h5>
+      {{comment.comment}}
+      <ng-container *ngIf="comment?.childComments?.length > 0">
+          <ng-container *ngFor="let childComment of comment.childComments">
+              <app-comment [comment]="childComment"></app-comment>
+          </ng-container>
+      </ng-container>
+    </div>
+</div>
