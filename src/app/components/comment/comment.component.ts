@@ -30,6 +30,11 @@ export class CommentComponent implements OnInit {
       image: 'https://place-hold.it/70x70/',
       timeStamp: new Date(),
       comment: commentValue.comment,
+      vote: {
+        upVote: 0,
+        downVote: 0,
+        isUpvote: null
+      }
     };
     comment.childComments = comment.childComments ? comment.childComments : [];
     comment.childComments.push(commentObj)
