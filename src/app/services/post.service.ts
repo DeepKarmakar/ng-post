@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 import * as constant from '../constants/post.constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
+  isUserLoggedIn = new BehaviorSubject(false);
 
   constructor() { }
 
@@ -23,5 +24,9 @@ export class PostService {
       return of(constant.post);
     }
     return of(notValidPost)
+  }
+
+  updateLogin(data){
+    this.isUserLoggedIn.next(data);
   }
 }

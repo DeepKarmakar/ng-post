@@ -1,0 +1,27 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Login</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm.value, content)">
+        
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" placeholder="Enter Email (deep@gmail.com)" value="deep@gmail.com" class="form-control" name="email" [(ngModel)]="loginObj.email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Password</label>
+                <input type="password" placeholder="Enter Password (password)" value="password" class="form-control" name="password" [(ngModel)]="loginObj.password">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <small id="emailHelp" class="form-text text-danger mr-auto" *ngIf="isWrongLogin">Credential is not correct</small>
+            <button type="submit" class="btn btn-outline-dark">Login</button>
+        </div>
+    </form>
+  </ng-template>
+  
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)"><ng-content></ng-content></button>

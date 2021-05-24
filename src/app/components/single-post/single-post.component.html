@@ -2,18 +2,24 @@
     <div class="container">
       <h1 class="display-4">{{post.title | uppercase}}</h1>
       <p class="lead">{{post.description}}</p>
+      <a [routerLink]="['/']">Back to list</a> 
     </div>
 </div>
-<div class="mb-5">
+<div class="mb-5" [ngClass]="!isLoggedIn ? 'notLoggedIn' : ''">
     <h3>Comments</h3>
     <hr>
     <ng-container *ngFor="let comment of post.comments">
         <app-comment [comment]="comment"></app-comment>
     </ng-container>
-    <form>
-        <div class="form-group mt-5">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Add Reply</button>
-    </form>
+    <ng-container *ngIf="isLoggedIn; else notLoggedIn">
+        <form (ngSubmit)="onSubmitComment(commentForm)" #commentForm="ngForm">
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Add public comment" rows="10" name="comment" [(ngModel)]="commentForm.comment" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!commentForm.form.valid">Add Reply</button>
+        </form>
+    </ng-container>
+    <ng-template #notLoggedIn>
+        <app-user-modal>Login to add comment</app-user-modal>
+    </ng-template>
 </div>

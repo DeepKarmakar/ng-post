@@ -8,6 +8,10 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { SinglePostComponent } from './components/single-post/single-post.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { FormsModule } from '@angular/forms';
+import { UserModalComponent } from './components/user-modal/user-modal.component';
+// import { MomentModule } from 'ngx-moment';
+// import * as moment from 'moment';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,14 @@ import { CommentComponent } from './components/comment/comment.component';
     PostListComponent,
     SinglePostComponent,
     HeaderComponent,
-    CommentComponent
+    CommentComponent,
+    UserModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
