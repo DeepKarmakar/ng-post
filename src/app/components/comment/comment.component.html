@@ -3,7 +3,7 @@
       <img src="{{comment.image}}" class="mr-3" alt="...">
     </a>
     <div class="media-body">
-      <h5 class="m-0">{{comment.name}} <span class="small text-secondary">{{comment.timeStamp | date}}</span></h5>
+      <h5 class="m-0">{{comment.name}} <span class="small text-secondary">{{comment.timeStamp | moment: 'MMMM Do YYYY, h:mm:ss a'}}</span></h5>
       {{comment.comment}}
       <div>
         <span class="btn-link text-secondary cursor-pointer reply-text" (click)="toggleCommentBox(comment)">Reply</span>

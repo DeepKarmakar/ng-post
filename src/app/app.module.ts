@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { FormsModule } from '@angular/forms';
 import { UserModalComponent } from './components/user-modal/user-modal.component';
+import { MomentPipe } from './pipes/moment.pipe';
 // import { MomentModule } from 'ngx-moment';
 // import * as moment from 'moment';
 
@@ -20,7 +21,8 @@ import { UserModalComponent } from './components/user-modal/user-modal.component
     SinglePostComponent,
     HeaderComponent,
     CommentComponent,
-    UserModalComponent
+    UserModalComponent,
+    MomentPipe
   ],
   imports: [
     BrowserModule,

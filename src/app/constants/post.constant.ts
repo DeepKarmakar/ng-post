@@ -20,7 +20,7 @@ export const post:any = {
             userId: 1,
             name: 'name 1',
             image: 'https://place-hold.it/70x70/',
-            timeStamp: 'Mon May 24 2021 08:26:52 GMT+0530',
+            timeStamp: 'Mon May 14 2021 08:26:52 GMT+0530',
             comment: 'Some dummy comment',
             vote: {
                 upVote: 1,
@@ -44,7 +44,7 @@ export const post:any = {
                     userId: 1,
                     name: 'name 3',
                     image: 'https://place-hold.it/70x70/',
-                    timeStamp: 'Mon May 24 2021 08:26:52 GMT+0530',
+                    timeStamp: 'Mon May 24 2021 09:26:52 GMT+0530',
                     comment: 'Lorem ipsum dolor sit amet consectetur',
                     vote: {
                         upVote: 5,
@@ -56,7 +56,7 @@ export const post:any = {
                     userId: 1,
                     name: 'name 4',
                     image: 'https://place-hold.it/70x70/',
-                    timeStamp: 'Mon May 24 2021 08:26:52 GMT+0530',
+                    timeStamp: 'Mon May 24 2021 10:26:52 GMT+0530',
                     comment: 'Dummy content',
                     vote: {
                         upVote: 14,
